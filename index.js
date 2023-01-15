@@ -18,7 +18,12 @@ const searchPokémon = (input) => {
         .then(
             (pokemonData) => {
                 infoSection.innerHTML =
-                    JSON.stringify(pokemonData)
+                    `<img src=${pokemonData.sprites.front_default}><br>
+                    Name: ${pokemonData.name.toUpperCase()}<br>
+                    Type: ${pokemonData.types.map(_type => ` ${_type.type.name.toUpperCase()}`)}<br>
+                    Weight: ${pokemonData.weight}<br>
+                    Height: ${pokemonData.height}<br>
+                    Moves: <br>${pokemonData.moves.map(_moves => ` ${_moves.move.name}`)}<br>`
             }
         )
 }
