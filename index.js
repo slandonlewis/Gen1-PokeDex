@@ -4,6 +4,8 @@ const addBtn = document.querySelector('#add')
 const infoSection = document.querySelector('#info')
 const ownEl = document.querySelector('#own')
 const api = 'https://pokeapi.co/api/v2/pokemon'
+const list = document.querySelector('#pokemon-list')
+const viewListBtn = document.querySelector('#view-list-button')
 let currentPokemon
 let caught = []
 
@@ -26,6 +28,10 @@ addBtn.addEventListener('click', (evt) => {
     }
 })
 
+viewListBtn.addEventListener('click', (evt) => {
+    toggleOwnedList()
+})
+
 const searchPokémon = (input) => {
     fetch(`${api}/${input.toLowerCase()}`)
         .then(res => res.json())
@@ -42,4 +48,15 @@ const searchPokémon = (input) => {
                 currentPokemon = pokemonData
             }
         )
+}
+
+const toggleOwnedList = () => {
+    if (list.className === 'hide') {
+        viewListBtn.textContent = 'Close List'
+        list.className = ''
+        list.innerHTML = `${caught.map(pkmn => `<li>No. ${pkmn.id} - ${pkmn.name.toUpperCase()}`)}`
+    } else {
+        viewListBtn.textContent = 'View Owned List'
+        list.className = 'hide'
+    }
 }

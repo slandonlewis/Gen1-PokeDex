@@ -1,3 +1,17 @@
 .hide {
     visibility: hidden;
 }
+
+h1 {
+    color: rgb(255, 255, 255);
+    background-color: red;
+}
+
+#own-count {
+    background-color: rgb(4, 145, 4);
+    color: aquamarine;
+}
+
+#pokemon-info {
+    background-color: aqua;
+}
