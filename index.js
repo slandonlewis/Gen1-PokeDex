@@ -4,17 +4,14 @@ const infoSection = document.querySelector('#info')
 const api = 'https://pokeapi.co/api/v2/pokemon'
 
 const searchPokémon = (input) => {
-    // return fetch(`${apiKey}/${input.toLowerCase()}`)
-    //     .then((resp) => resp.json())
-    //     .then(
-    //         console.log(resp)
-    //     )
+    fetch(`${api}/${input.toLowerCase()}`)
+        .then(res => res.json())
+        .then(
+            (pokemonData) => {
+                infoSection.innerHTML =
+                    JSON.stringify(pokemonData)
+            }
+        )
 }
 
-fetch(`${api}/bulbasaur`)
-    .then(res => res.json())
-    .then(
-        (pokemonData) => {
-            console.log(pokemonData)
-        }
-    )
+searchPokémon('bulbasaur')
