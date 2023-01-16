@@ -5,6 +5,7 @@
 h1 {
     color: rgb(255, 255, 255);
     background-color: red;
+    margin-top: 0%;
 }
 
 #own-count {
@@ -13,5 +14,33 @@ h1 {
 }
 
 #pokemon-info {
-    background-color: aqua;
+    margin-top: 5px;
+    background-color: rgb(54, 168, 255);
+    text-align: center;
+    justify-content: center;
+    width: 350px;
+    height: 455px;
+}
+
+#moves {
+    background-color: rgb(198, 228, 255);
+    font-size: smaller;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    overflow: hidden;
+    overflow: scroll;
+    text-align: center;
+    margin-left: 4.5%;
+}
+
+body {
+    background-color: rgb(19, 19, 19);
+    text-align: center;
+    margin-top: 0%;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
 }

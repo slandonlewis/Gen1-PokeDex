@@ -43,7 +43,8 @@ const searchPokémon = (input) => {
             Type: ${pokemonData.types.map(_type => ` ${_type.type.name.toUpperCase()}`)}<br>
             Weight: ${pokemonData.weight}<br>
             Height: ${pokemonData.height}<br>
-            Moves: <br>${pokemonData.moves.map(_moves => ` ${_moves.move.name}`)}<br>`
+            Moves: <br>
+            <div id='moves'>${pokemonData.moves.map(_moves => ` ${_moves.move.name}`)}</div>`
                 addBtn.className = ''
                 currentPokemon = pokemonData
             }
@@ -58,5 +59,6 @@ const toggleOwnedList = () => {
     } else {
         viewListBtn.textContent = 'View Owned List'
         list.className = 'hide'
+        list.innerHTML = ''
     }
 }
