@@ -26,6 +26,13 @@ addBtn.addEventListener('click', (evt) => {
         caught.push(currentPokemon)
         caught.sort((a, b) => (a.id > b.id) ? 1 : -1)
         ownEl.innerHTML = `Total Caught: ${caught.length}`
+        // update owned list on page
+        if (list.className != 'hide') {
+            list.innerHTML = `
+            ${caught.map(pkmn =>
+                `<li>No. ${pkmn.id} - ${pkmn.name.toUpperCase()}`)
+                    .join(' ')}`
+        }
     }
 })
 
