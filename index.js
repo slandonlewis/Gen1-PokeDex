@@ -44,7 +44,11 @@ const searchPokémon = (input) => {
             Weight: ${pokemonData.weight}<br>
             Height: ${pokemonData.height}<br>
             Moves: <br>
-            <div id='moves'>${pokemonData.moves.map(_moves => ` ${_moves.move.name}`)}</div>`
+            <div id='moves'>
+            <ul>
+            ${pokemonData.moves.map(_moves => `<li>${_moves.move.name}</li>`).join(' ')}
+            </ul>
+            </div>`
                 addBtn.className = ''
                 currentPokemon = pokemonData
             }
