@@ -24,6 +24,7 @@ addBtn.addEventListener('click', (evt) => {
     } else {
         currentPokemon.owned = true
         caught.push(currentPokemon)
+        caught.sort((a, b) => (a.id > b.id) ? 1 : -1)
         ownEl.innerHTML = `Total Caught: ${caught.length}`
     }
 })
@@ -59,7 +60,10 @@ const toggleOwnedList = () => {
     if (list.className === 'hide') {
         viewListBtn.textContent = 'Close List'
         list.className = ''
-        list.innerHTML = `${caught.map(pkmn => `<li>No. ${pkmn.id} - ${pkmn.name.toUpperCase()}`).sort((a, b) => (a.id > b.id) ? 1 : -1).join(' ')}`
+        list.innerHTML = `
+        ${caught.map(pkmn =>
+            `<li>No. ${pkmn.id} - ${pkmn.name.toUpperCase()}`)
+                .join(' ')}`
     } else {
         viewListBtn.textContent = 'View Owned List'
         list.className = 'hide'
