@@ -59,7 +59,7 @@ const toggleOwnedList = () => {
     if (list.className === 'hide') {
         viewListBtn.textContent = 'Close List'
         list.className = ''
-        list.innerHTML = `${caught.map(pkmn => `<li>No. ${pkmn.id} - ${pkmn.name.toUpperCase()}`)}`
+        list.innerHTML = `${caught.map(pkmn => `<li>No. ${pkmn.id} - ${pkmn.name.toUpperCase()}`).sort((a, b) => (a.id > b.id) ? 1 : -1).join(' ')}`
     } else {
         viewListBtn.textContent = 'View Owned List'
         list.className = 'hide'
